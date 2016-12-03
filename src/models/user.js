@@ -74,6 +74,20 @@ function joinTeam(teamId, callback) {
         });
 }
 
+// function createPost(postId, callback) {
+//     let userData = {
+//         author: sessionStorage.getItem('username'),
+//         postId: postId,
+//         dateofpublish: new Date.now(),
+//     };
+//     requester.post('user', sessionStorage.getItem('userId'), userData, 'kinvey')
+//         .then((response) => {
+//             saveSession(response);
+//             observer.onSessionUpdate();
+//             callback(true);
+//         });
+// }
+
 function leaveTeam(callback) {
     let userData = {
         username: sessionStorage.getItem('username'),

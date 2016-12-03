@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Header from './components/common/Header';
+import Footer from './components/common/Footer'
 import Navbar from './components/common/Navbar';
 import Infobox from  './components/common/Infobox';
 import {Link} from 'react-router';
@@ -53,7 +54,9 @@ class App extends Component {
                     {navbar}
                 </Header>
                 {this.props.children}
+                <Footer/>
                 <Infobox/>
+
             </div>
         )
     }
