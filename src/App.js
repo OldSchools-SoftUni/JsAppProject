@@ -42,6 +42,7 @@ class App extends Component {
                 <Navbar>
                     <Link to="/" className="btn btn-default" activeClassName="btn btn-default active" onlyActiveOnIndex={true}>Home</Link>
                     <Link to="/catalog" className="btn btn-default" activeClassName="btn btn-default active">Catalog</Link>
+                    <Link to="/create" className="btn btn-default" activeClassName="btn btn-default active">Create</Link>
                     <Link to="/about" className="btn btn-default" activeClassName="btn btn-default active">About</Link>
                     <Link to="/logout" className="btn btn-default" activeClassName="btn btn-default active">Logout</Link>
                 </Navbar>

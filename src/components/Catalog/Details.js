@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {loadTeamDetails, loadUsersDetails} from '../../models/team';
+import {loadPost, loadUsersDetails} from '../../models/post';
 import {joinTeam, leaveTeam} from '../../models/user';
-import TeamControls from './TeamControls';
+import TeamControls from './PostControls';
 import './Details.css';
 
 export default class Details extends Component {
@@ -41,7 +41,7 @@ export default class Details extends Component {
     }
 
     componentDidMount() {
-        loadTeamDetails(this.props.params.teamId, this.onLoadSuccess);
+        loadPost(this.props.params.teamId, this.onLoadSuccess);
         loadUsersDetails(this.props.params.teamId, this.onUsersSuccess);
     }
 

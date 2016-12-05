@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Team from './Team';
-import {loadTeams} from '../../models/team';
+import Post from './Post';
+import {loadPosts} from '../../models/post';
 import {Link} from 'react-router';
 //import observer from '../../models/observer';
 
@@ -8,7 +8,7 @@ export default class CatalogPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            teams: []
+            posts: []
         };
         this.bindEventHandlers();
     }
@@ -18,19 +18,21 @@ export default class CatalogPage extends Component {
     }
 
     onLoadSuccess(response) {
-        // Display teams
-        this.setState({teams: response})
+        // Display posts
+
+        this.setState({posts: response})
+
     }
 
     componentDidMount() {
-        // Request list of teams from the server
-        loadTeams(this.onLoadSuccess);
+        // Request list of posts from the server
+        loadPosts(this.onLoadSuccess);
     }
 
     render() {
         let createLink = null;
-        if (!sessionStorage.getItem('teamId')) {
-            createLink = <Link to="/create" className="btn btn-default">Create team</Link>
+        if (!sessionStorage.getItem('postId')) {
+            createLink = <Link to="/create" className="btn btn-default">Create post</Link>
         }
 
         return (
@@ -38,11 +40,38 @@ export default class CatalogPage extends Component {
                 <h1>Catalog Page</h1>
                 {createLink}
                 <div>
-                    {this.state.teams.map((e, i) => {
-                        return <Team key={i} name={e.name} id={e._id} description={e.comment}/>
+                    <table className="table table-striped">
+                        <tbody>
+                        <tr>
+                            <th>Post #</th>
+                            <th>Author</th>
+                            <th>Context</th>
+                            <th>Date of publish</th>
+                        </tr>
+                    {this.state.posts.map((e, i) => {
+                        return(
+                            <Post
+                                number = {++i}
+                                key={++i}
+                                author={e.author}
+                                id={e._id}
+                                context={e.context}
+                                dateofpublish={e.dateofpublish}/>
+                        )
                     })}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         );
     }
 }
+// <div>
+//     <h1>Catalog Page</h1>
+//     {createLink}
+//     <div>
+//         {this.state.posts.map((e, i) => {
+//             return <Post key={i} author={e.author} id={e._id} context={e.context}/>
+//         })}
+//     </div>
+// </div>

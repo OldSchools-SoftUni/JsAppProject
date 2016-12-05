@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 import EditForm from './EditForm';
-import {loadTeamDetails, edit} from '../../models/team';
+import {loadPost, edit} from '../../models/post';
 
 export default class EditPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {name: '', description: '', submitDisabled: true};
+        this.state = {author: '', context: '', dateofpublish: '', submitDisabled: true};
         this.bindEventHandlers();
     }
 
     componentDidMount() {
         // Populate form
-        loadTeamDetails(this.props.params.teamId, this.onLoadSuccess);
+        loadPost(this.props.params.postId, this.onLoadSuccess);
     }
 
     bindEventHandlers() {
@@ -24,8 +24,9 @@ export default class EditPage extends Component {
 
     onLoadSuccess(response) {
         this.setState({
-            name: response.name,
-            description: response.comment,
+            author: sessionStorage.getItem('username'),
+            context: response.context,
+            dateofpublish: response.dateofpublish,
             submitDisabled: false
         });
     }
@@ -40,7 +41,7 @@ export default class EditPage extends Component {
     onSubmitHandler(event) {
         event.preventDefault();
         this.setState({submitDisabled: true});
-        edit(this.props.params.teamId, this.state.name, this.state.description, this.onSubmitResponse);
+        edit(this.props.params.postId, this.state.author, this.state.context, this.state.dateofpublish, this.onSubmitResponse);
     }
 
     onSubmitResponse(response) {
@@ -58,7 +59,7 @@ export default class EditPage extends Component {
             <div>
                 <h1>Edit Page</h1>
                 <EditForm
-                    name={this.state.name}
+                    author={this.state.author}
                     description={this.state.description}
                     submitDisabled={this.state.submitDisabled}
                     onChangeHandler={this.onChangeHandler}

@@ -61,18 +61,18 @@ function logout(callback) {
     }
 }
 
-function joinTeam(teamId, callback) {
-    let userData = {
-        username: sessionStorage.getItem('username'),
-        teamId: teamId
-    };
-    requester.update('user', sessionStorage.getItem('userId'), userData, 'kinvey')
-        .then((response) => {
-            saveSession(response);
-            observer.onSessionUpdate();
-            callback(true);
-        });
-}
+// function joinTeam(teamId, callback) {
+//     let userData = {
+//         username: sessionStorage.getItem('username'),
+//         teamId: teamId
+//     };
+//     requester.update('user', sessionStorage.getItem('userId'), userData, 'kinvey')
+//         .then((response) => {
+//             saveSession(response);
+//             observer.onSessionUpdate();
+//             callback(true);
+//         });
+// }
 
 // function createPost(postId, callback) {
 //     let userData = {
@@ -88,17 +88,18 @@ function joinTeam(teamId, callback) {
 //         });
 // }
 
-function leaveTeam(callback) {
-    let userData = {
-        username: sessionStorage.getItem('username'),
-        teamId: ''
-    };
-    requester.update('user', sessionStorage.getItem('userId'), userData, 'kinvey')
-        .then((response) => {
-            saveSession(response);
-            observer.onSessionUpdate();
-            callback(true);
-        });
-}
+// function leaveTeam(callback) {
+//     let userData = {
+//         username: sessionStorage.getItem('username'),
+//         teamId: ''
+//     };
+//     requester.update('user', sessionStorage.getItem('userId'), userData, 'kinvey')
+//         .then((response) => {
+//             saveSession(response);
+//             observer.onSessionUpdate();
+//             callback(true);
+//         });
+// }
 
-export {login, register, logout, joinTeam, leaveTeam};
+// export {login, register, logout, joinTeam, leaveTeam};
+export {login, register, logout};
