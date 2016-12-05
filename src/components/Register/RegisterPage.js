@@ -41,7 +41,8 @@ export default class RegisterPage extends Component {
             alert("Passwords don't match");
             return;
         }
-        this.setState({ submitDisabled: true });
+        this.setState({ submitDisabled: true});
+
         register(this.state.username, this.state.password, this.state.email, this.onSubmitResponse);
     }
 

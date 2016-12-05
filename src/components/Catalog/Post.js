@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 import './Post.css';
+import PostControls from './PostControls';
 
 export default class Post extends Component {
 
@@ -11,6 +12,7 @@ export default class Post extends Component {
                 <td>{this.props.author}</td>
                 <td>{this.props.context}</td>
                 <td>{this.props.dateofpublish}</td>
+                <td><PostControls author={this.props.author}/></td>
             </tr>
         )
     }

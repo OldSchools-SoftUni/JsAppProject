@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {loadPost, loadUsersDetails} from '../../models/post';
 import {joinTeam, leaveTeam} from '../../models/user';
-import TeamControls from './PostControls';
+import PostControls from './PostControls';
 import './Details.css';
 
 export default class Details extends Component {
@@ -85,7 +85,7 @@ export default class Details extends Component {
                 <span className="spanner">Description</span>
                 <p>{this.state.description || 'No description'}</p>
                 <span className="spanner">Team management</span>
-                <TeamControls
+                <PostControls
                     teamId={this.props.params.teamId}
                     onJoin={this.onJoin}
                     onLeave={this.onLeave}

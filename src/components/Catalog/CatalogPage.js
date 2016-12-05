@@ -47,6 +47,7 @@ export default class CatalogPage extends Component {
                             <th>Author</th>
                             <th>Context</th>
                             <th>Date of publish</th>
+                            <th>Events</th>
                         </tr>
                     {this.state.posts.map((e, i) => {
                         return(
