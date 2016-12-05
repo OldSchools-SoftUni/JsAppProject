@@ -30,7 +30,7 @@ export default class CreatePage extends Component {
     onSubmitHandler(event) {
         event.preventDefault();
         this.setState({submitDisabled: true});
-        create(this.state.author, this.state.context, this.state.dateofpublish, this.onSubmitResponse);
+        create(sessionStorage.getItem('username'), this.state.context, this.state.dateofpublish, this.onSubmitResponse);
     }
 
     onSubmitResponse(response) {
@@ -50,7 +50,7 @@ export default class CreatePage extends Component {
                 <CreateForm
                     author={this.state.author}
                     context={this.state.context}
-                    dateofpublish = {this.state.dateofpublish}
+                    dateofpublish={this.state.dateofpublish}
                     submitDisabled={this.state.submitDisabled}
                     onChangeHandler={this.onChangeHandler}
                     onSubmitHandler={this.onSubmitHandler}

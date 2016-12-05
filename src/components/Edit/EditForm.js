@@ -10,8 +10,8 @@ export default class EditForm extends Component {
                         className="form-control"
                         type="text"
                         name="author"
-                        value={this.props.author}
-                        disabled={this.props.submitDisabled}
+                        value={sessionStorage.getItem('username')}
+                        disabled= 'true'
                         onChange={this.props.onChangeHandler}
                     />
                 </div>
