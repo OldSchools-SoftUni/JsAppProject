@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Greeting from '../common/Greeting';
+import './Header.css'
 
 export default class Header extends Component {
     render() {
