@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CreateForm from '../Edit/EditForm';
+import CreateForm from '../Create/CreateForm';
 import {create} from '../../models/post';
 
 export default class CreatePage extends Component {

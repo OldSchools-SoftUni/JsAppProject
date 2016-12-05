@@ -3,8 +3,7 @@ import {Link} from 'react-router';
 
 export default class PostControls extends Component {
     render() {
-        console.dir(this.props.author)
-        let edit = <Link to={"/edit/" + this.props.teamId} className="btn btn-default">Edit</Link>;
+        let edit = <Link to={"/edit/" + this.props.id} className="btn btn-default">Edit</Link>;
         let deleted = <a href="" className="btn btn-default" onClick={this.props.onLeave}>Delete</a>;
 
 

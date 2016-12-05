@@ -18,14 +18,16 @@ function loadPost(postId, onPostSuccess) {
 //         .then(onUsersSuccess);
 // }
 
-// function edit(teamId, name, description, callback) {
-//     let teamData = {
-//         name: name,
-//         comment: description
-//     };
-//     update('appdata', 'teams/' + teamId, teamData, 'kinvey')
-//         .then(callback(true));
-// }
+function edit(id, author, context, dateofpublish, callback) {
+    console.log(id);
+    let postData = {
+        author: author,
+        context: context,
+        dateofpublish: dateofpublish
+    };
+    update('appdata', 'posts/' + id, postData, 'kinvey')
+        .then(callback(true));
+}
 
 function create(author, context, dateofpublish, callback) {
     let postData = {
@@ -40,4 +42,4 @@ function create(author, context, dateofpublish, callback) {
 }
 
 // export {loadTeams, loadPost, loadUsersDetails, edit, create};
-export {loadPosts, loadPost, create};
+export {loadPosts, loadPost, create, edit};
