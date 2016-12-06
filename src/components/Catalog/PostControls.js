@@ -7,7 +7,7 @@ export default class PostControls extends Component {
     render() {
         let edit = <Link to={"/edit/" + this.props.id} className="btn btn-default">Edit</Link>;
         // <a href="/catalog" className="btn btn-default" onClick={()=>reload('posts/' + this.props.id)}>Delete</a>;
-        let del =<button className="btn btn-default" type="submit" onClick={()=>reload('posts/' + this.props.id)}>Delete</button>
+        let del =<button to="/catalog" className="btn btn-default" type="submit" onClick={()=>reload('posts/' + this.props.id)}>Delete</button>
 
 
         let comment = <a href="" className="btn btn-default" onClick={this.props.onJoin}>Comment</a>;

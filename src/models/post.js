@@ -46,6 +46,7 @@ function reload(index){
         .then((callback) => {
             loadPosts(callback);
         });
+
 }
 
 // export {loadTeams, loadPost, loadUsersDetails, edit, create};

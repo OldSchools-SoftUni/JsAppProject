@@ -29,18 +29,21 @@ export default class CreatePage extends Component {
 
     onSubmitHandler(event) {
         event.preventDefault();
-        this.setState({submitDisabled: true});
+        this.setState({submitDisabled: false});
         create(sessionStorage.getItem('username'), this.state.context, this.state.dateofpublish, this.onSubmitResponse);
     }
 
-    onSubmitResponse(response) {
-        console.dir(response)
-        if (response === true) {
+    onSubmitResponse(response, textStatus, xhr) {
+        console.dir(response);
+        console.log(textStatus);
+        console.log(xhr);
+        if (textStatus == 'success') {
             // Navigate away from login page
-            this.context.router.push('/');
+            this.context.router.push('/catalog');
         } else {
             // Something went wrong, let the user try again
             this.setState({submitDisabled: true});
+            this.context.router.push('/create');
         }
     }
 

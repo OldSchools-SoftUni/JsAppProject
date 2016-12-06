@@ -32,9 +32,9 @@ class App extends Component {
             navbar = (
                     <Navbar>
                         <Link to="/" className="btn btn-default" activeClassName="btn btn-default active" onlyActiveOnIndex={true}>Home</Link>
-                        <Link to="/about" className="btn btn-default" activeClassName="btn btn-default active">About</Link>
                         <Link to="/login" className="btn btn-default" activeClassName="btn btn-default active">Login</Link>
                         <Link to="/register" className="btn btn-default" activeClassName="btn btn-default active">Register</Link>
+                        <Link to="/about" className="btn btn-default" activeClassName="btn btn-default active">About</Link>
                     </Navbar>
                 );
         } else {
@@ -43,8 +43,8 @@ class App extends Component {
                     <Link to="/" className="btn btn-default" activeClassName="btn btn-default active" onlyActiveOnIndex={true}>Home</Link>
                     <Link to="/catalog" className="btn btn-default" activeClassName="btn btn-default active">Catalog</Link>
                     <Link to="/create" className="btn btn-default" activeClassName="btn btn-default active">Create</Link>
-                    <Link to="/about" className="btn btn-default" activeClassName="btn btn-default active">About</Link>
                     <Link to="/logout" className="btn btn-default" activeClassName="btn btn-default active">Logout</Link>
+                    <Link to="/about" className="btn btn-default" activeClassName="btn btn-default active">About</Link>
                 </Navbar>
             );
         }
