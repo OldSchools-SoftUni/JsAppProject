@@ -31,20 +31,20 @@ class App extends Component {
         if (!this.state.loggedIn) {
             navbar = (
                     <Navbar>
-                        <Link to="/" className="btn btn-default" activeClassName="btn btn-default active" onlyActiveOnIndex={true}>Home</Link>
-                        <Link to="/login" className="btn btn-default" activeClassName="btn btn-default active">Login</Link>
-                        <Link to="/register" className="btn btn-default" activeClassName="btn btn-default active">Register</Link>
-                        <Link to="/about" className="btn btn-default" activeClassName="btn btn-default active">About</Link>
+                        <Link to="/" className="btn btn-primary" activeClassName="btn btn-primary active" onlyActiveOnIndex={true}>Home</Link>
+                        <Link to="/login" className="btn btn-primary" activeClassName="btn btn-primary active">Login</Link>
+                        <Link to="/register" className="btn btn-primary" activeClassName="btn btn-primary active">Register</Link>
+                        <Link to="/about" className="btn btn-primary" activeClassName="btn btn-primary active">About</Link>
                     </Navbar>
                 );
         } else {
             navbar = (
                 <Navbar>
-                    <Link to="/" className="btn btn-default" activeClassName="btn btn-default active" onlyActiveOnIndex={true}>Home</Link>
-                    <Link to="/catalog" className="btn btn-default" activeClassName="btn btn-default active">Catalog</Link>
-                    <Link to="/create" className="btn btn-default" activeClassName="btn btn-default active">Create</Link>
-                    <Link to="/logout" className="btn btn-default" activeClassName="btn btn-default active">Logout</Link>
-                    <Link to="/about" className="btn btn-default" activeClassName="btn btn-default active">About</Link>
+                    <Link to="/" className="btn btn-primary" activeClassName="btn btn-primary primary" onlyActiveOnIndex={true}>Home</Link>
+                    <Link to="/catalog" className="btn btn-primary" activeClassName="btn btn-primary active">Catalog</Link>
+                    <Link to="/create" className="btn btn-primary" activeClassName="btn btn-primary active">Create</Link>
+                    <Link to="/logout" className="btn btn-primary" activeClassName="btn btn-primary active">Logout</Link>
+                    <Link to="/about" className="btn btn-primary" activeClassName="btn btn-primary active">About</Link>
                 </Navbar>
             );
         }
