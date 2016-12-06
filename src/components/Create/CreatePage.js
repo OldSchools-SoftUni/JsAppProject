@@ -29,7 +29,7 @@ export default class CreatePage extends Component {
 
     onSubmitHandler(event) {
         event.preventDefault();
-        this.setState({submitDisabled: false});
+        this.setState({submitDisabled: true});
         create(sessionStorage.getItem('username'), this.state.context, this.state.dateofpublish, this.onSubmitResponse);
     }
 
@@ -42,8 +42,7 @@ export default class CreatePage extends Component {
             this.context.router.push('/catalog');
         } else {
             // Something went wrong, let the user try again
-            this.setState({submitDisabled: true});
-            this.context.router.push('/create');
+            this.setState({submitDisabled: false});
         }
     }
 

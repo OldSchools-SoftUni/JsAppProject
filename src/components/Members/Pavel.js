@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Members.css';
-import $ from 'jquery';
+import {repos} from './getRepos';
 
 export default class Pavel extends Component {
 
@@ -45,25 +45,5 @@ export default class Pavel extends Component {
                 <button className="btn btn-block" onClick={() => repos('masive')}>Get Repos</button>
             </div>
         );
-
-        function repos(username) {
-            $("#repos").empty();
-            let url = "https://api.github.com/users/" + username + "/repos";
-            $.ajax(url)
-                .then(displayData)
-                .catch(displayError);
-
-            function displayData(repos) {
-                for (let repo of repos) {
-                    let link = $('<a>').text(repo.full_name);
-                    link.attr('href', repo.html_url);
-                    $('#repos').append($('<li>').append(link));
-                }
-            }
-
-            function displayError(error) {
-                console.log(error);
-            }
-        }
     }
 }

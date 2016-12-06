@@ -20,7 +20,7 @@ export default class CatalogPage extends Component {
     onLoadSuccess(response) {
         // Display posts
 
-        this.setState({posts: response})
+        this.setState({posts: response});
 
     }
 
@@ -67,6 +67,10 @@ export default class CatalogPage extends Component {
         );
     }
 }
+
+CatalogPage.contextTypes = {
+    router: React.PropTypes.object
+};
 // <div>
 //     <h1>Catalog Page</h1>
 //     {createLink}

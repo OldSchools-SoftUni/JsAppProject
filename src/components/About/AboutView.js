@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import RepoList from './RepoList';
 import Vasil from '../Members/Vasil';
 import Veso from '../Members/Veso';
 import Pavel from '../Members/Pavel';
@@ -16,7 +18,7 @@ export default class AboutPage extends Component {
                 <Pavel/>
                 <Margo/>
                 <Stan/>
-                <div id="repos"></div>
+                <RepoList/>
             </div>
 
         );

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import EditForm from './EditForm';
-import {loadPost, edit} from '../../models/post';
+import {loadPost, edit, reload} from '../../models/post';
 
 export default class EditPage extends Component {
     constructor(props) {
@@ -47,7 +47,8 @@ export default class EditPage extends Component {
     onSubmitResponse(response) {
         if (response === true) {
             // Navigate away from login page
-            this.context.router.push('/');
+            reload();
+            this.context.router.push('/catalog');
         } else {
             // Something went wrong, let the user try again
             this.setState({submitDisabled: true});

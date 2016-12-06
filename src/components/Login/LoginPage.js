@@ -35,13 +35,15 @@ export default class LoginPage extends Component {
         login(this.state.username, this.state.password, this.onSubmitResponse);
     }
 
-    onSubmitResponse(response) {
+    onSubmitResponse(response, textStatus, xhr) {
+        console.log(response);
         if (response === true) {
             // Navigate away from login page
             this.context.router.push('/');
         } else {
             // Something went wrong, let the user try again
-            this.setState({ submitDisabled: true });
+            this.setState({ submitDisabled: false });
+
         }
     }
 

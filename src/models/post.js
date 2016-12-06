@@ -45,6 +45,7 @@ function reload(index){
     deleted(index)
         .then((callback) => {
             loadPosts(callback);
+            this.context.router.push('/');
         });
 
 }
