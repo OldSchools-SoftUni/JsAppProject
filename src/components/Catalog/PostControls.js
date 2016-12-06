@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import {deleted} from '../../models/requester';
+import {reload} from '../../models/post'
 
 export default class PostControls extends Component {
     render() {
         let edit = <Link to={"/edit/" + this.props.id} className="btn btn-default">Edit</Link>;
-        let deleted = <a href="" className="btn btn-default" onClick={this.props.onLeave}>Delete</a>;
+        // <a href="/catalog" className="btn btn-default" onClick={()=>reload('posts/' + this.props.id)}>Delete</a>;
+        let del =<button className="btn btn-default" type="submit" onClick={()=>reload('posts/' + this.props.id)}>Delete</button>
 
 
         let comment = <a href="" className="btn btn-default" onClick={this.props.onJoin}>Comment</a>;
@@ -17,7 +20,7 @@ export default class PostControls extends Component {
             return (
                 <div>
                     {edit}
-                    {deleted}
+                    {del}
                     {comment}
                 </div>
             )

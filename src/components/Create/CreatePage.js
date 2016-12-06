@@ -34,6 +34,7 @@ export default class CreatePage extends Component {
     }
 
     onSubmitResponse(response) {
+        console.dir(response)
         if (response === true) {
             // Navigate away from login page
             this.context.router.push('/');

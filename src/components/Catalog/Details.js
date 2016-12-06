@@ -3,6 +3,7 @@ import {loadPost, loadUsersDetails} from '../../models/post';
 import {joinTeam, leaveTeam} from '../../models/user';
 import PostControls from './PostControls';
 import './Details.css';
+import {deleted} from '../../models/requester';
 
 export default class Details extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ export default class Details extends Component {
         this.onLoadSuccess = this.onLoadSuccess.bind(this);
         this.onUsersSuccess = this.onUsersSuccess.bind(this);
         this.onJoin = this.onJoin.bind(this);
-        this.onLeave = this.onLeave.bind(this);
+        //this.onLeave = this.onLeave.bind(this);
         this.statusChange = this.statusChange.bind(this);
     }
 
@@ -32,8 +33,9 @@ export default class Details extends Component {
     }
 
     onLeave(event) {
+        console.log(event)
         event.preventDefault();
-        leaveTeam(this.statusChange);
+        deleted(this.statusChange);
     }
 
     statusChange(response) {

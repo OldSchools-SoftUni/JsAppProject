@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 
 export default class CreateForm extends Component {
     render() {
@@ -11,7 +12,7 @@ export default class CreateForm extends Component {
                         type="text"
                         name="author"
                         value={sessionStorage.getItem('username')}
-                        disabled='true'
+                        disabled={true}
                         onChange={this.props.onChangeHandler}
                     />
                 </div>
@@ -37,6 +38,8 @@ export default class CreateForm extends Component {
                     />
                 </div>
                 <input className="btn btn-default" type="submit" value="Submit changes" disabled={this.props.submitDisabled}/>
+
+
             </form>
         );
     }

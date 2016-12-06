@@ -1,11 +1,11 @@
 // eslint-disable-next-line
-import {get, post, update} from './requester';
+import {get, post, update,deleted} from './requester';
 // import {joinTeam} from './user';
 
 function loadPosts(callback) {
     // Request teams from db
     get('appdata', 'posts', 'kinvey')
-        .then(callback);
+        .then(callback)
 }
 
 function loadPost(postId, onPostSuccess) {
@@ -41,5 +41,12 @@ function create(author, context, dateofpublish, callback) {
         });
 }
 
+function reload(index){
+    deleted(index)
+        .then((callback) => {
+            loadPosts(callback);
+        });
+}
+
 // export {loadTeams, loadPost, loadUsersDetails, edit, create};
-export {loadPosts, loadPost, create, edit};
+export {loadPosts, loadPost, create, edit ,reload};
