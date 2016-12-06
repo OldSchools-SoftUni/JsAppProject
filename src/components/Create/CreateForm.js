@@ -11,7 +11,7 @@ export default class CreateForm extends Component {
                         type="text"
                         name="author"
                         value={sessionStorage.getItem('username')}
-                        disabled= 'true'
+                        disabled='true'
                         onChange={this.props.onChangeHandler}
                     />
                 </div>

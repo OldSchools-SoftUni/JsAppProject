@@ -52,7 +52,7 @@ export default class CatalogPage extends Component {
                     {this.state.posts.map((e, i) => {
                         return(
                             <Post
-                                number = {++i}
+                                number={++i}
                                 key={++i}
                                 author={e.author}
                                 id={e._id}

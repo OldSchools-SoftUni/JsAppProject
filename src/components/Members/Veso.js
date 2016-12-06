@@ -10,7 +10,7 @@ export default class Veso extends Component {
             <div className="div-members">
                 <div >
                     <img src="https://softuni.bg/users/profile/showavatar/6688d031-9f31-4e50-8495-88b2739321d7"
-                         width="170"/>
+                         width="170" role="presentation"/>
                 </div>
                 <div>
                     <p><h4>Веселин Маникатов</h4></p>
@@ -18,7 +18,7 @@ export default class Veso extends Component {
 
                         <a target="_blank" href="https://softuni.bg/users/profile/show/vessos">
                             <div className="div-link">
-                                <img src="https://softuni.bg/content/images/softuni-mobile-logo.png" width="30"/>
+                                <img src="https://softuni.bg/content/images/softuni-mobile-logo.png" width="30" role="presentation"/>
                             </div>
                         </a>
 
@@ -27,14 +27,14 @@ export default class Veso extends Component {
                             <div className="div-link">
                                 <img
                                     src="https://en.facebookbrand.com/wp-content/uploads/2016/05/FB-fLogo-Blue-broadcast-2.png"
-                                    width="30"/>
+                                    width="30" role="presentation"/>
                             </div>
                         </a>
 
                         <a target="_blank" href="https://github.com/vessos">
                             <div className="div-link">
                                 <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"
-                                     width="30"/>
+                                     width="30" role="presentation"/>
                             </div>
                         </a>
 
@@ -42,7 +42,7 @@ export default class Veso extends Component {
                             <a href="skype:maimun82">
                                 <img
                                     src="http://www.skypeassets.com/content/dam/skype/images/misc/Trademark/skype_logo_solid.jpg"
-                                    width="30"/>
+                                    width="30" role="presentation"/>
                             </a>
                         </div>
                     </p>
@@ -51,16 +51,14 @@ export default class Veso extends Component {
             </div>
         );
 
-        function repos(name) {
+        function repos(username) {
             $("#repos").empty();
-            let username = name;
             let url = "https://api.github.com/users/" + username + "/repos";
             $.ajax(url)
                 .then(displayData)
                 .catch(displayError);
 
             function displayData(repos) {
-                console.log(repos);
                 for (let repo of repos) {
                     let link = $('<a>').text(repo.full_name);
                     link.attr('href', repo.html_url);

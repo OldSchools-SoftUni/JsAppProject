@@ -9,27 +9,27 @@ export default class Pavel extends Component {
             <div className="div-members">
                 <div >
                     <img src="https://softuni.bg/users/profile/showavatar/2dc7cfd1-eb1f-4984-acf9-def660aa4310"
-                         width="170"/>
+                         width="170" role="presentation"/>
                 </div>
                 <div>
                     <p><h4>Павел Анчев</h4></p>
                     <p>
                         <a target="_blank" href="https://softuni.bg/users/profile/show/masive">
                             <div className="div-link">
-                                <img src="https://softuni.bg/content/images/softuni-mobile-logo.png" width="30"/>
+                                <img src="https://softuni.bg/content/images/softuni-mobile-logo.png" width="30" role="presentation"/>
                             </div>
                         </a>
                         <a target="_blank" href="https://www.facebook.com/pavel.anchev">
                             <div className="div-link">
                                 <img
                                     src="https://en.facebookbrand.com/wp-content/uploads/2016/05/FB-fLogo-Blue-broadcast-2.png"
-                                    width="30"/>
+                                    width="30" role="presentation"/>
                             </div>
                         </a>
                         <a target="_blank" href="https://github.com/masive">
                             <div className="div-link">
                                 <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"
-                                     width="30"/>
+                                     width="30" role="presentation"/>
                             </div>
                         </a>
 
@@ -37,7 +37,7 @@ export default class Pavel extends Component {
                             <a href="skype:p_anchev">
                                 <img
                                     src="http://www.skypeassets.com/content/dam/skype/images/misc/Trademark/skype_logo_solid.jpg"
-                                    width="30"/>
+                                    width="30" role="presentation"/>
                             </a>
                         </div>
                     </p>
@@ -46,16 +46,14 @@ export default class Pavel extends Component {
             </div>
         );
 
-        function repos(name) {
+        function repos(username) {
             $("#repos").empty();
-            let username = name;
             let url = "https://api.github.com/users/" + username + "/repos";
             $.ajax(url)
                 .then(displayData)
                 .catch(displayError);
 
             function displayData(repos) {
-                console.log(repos);
                 for (let repo of repos) {
                     let link = $('<a>').text(repo.full_name);
                     link.attr('href', repo.html_url);

@@ -6,11 +6,9 @@ export default class HomePage extends Component {
         let message = <p>You are currently not logged in. Please, log in or register to view team options.</p>;
 
         if (sessionStorage.getItem('username')) {
-            if (sessionStorage.getItem('teamId')) {
-                // message = <Link to={"/catalog/" + sessionStorage.getItem('teamId')}>Go to my team</Link>
+            if (true) {
                 message = <p>You are logged in!</p>
             } else {
-               // message = <p>You are currently not a member of a team. View the <Link to="/catalog">catalog</Link> to join or create one.</p>;
                 message = <p>You are not logged in!</p>
             }
         }
