@@ -6,7 +6,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {IndexRoute, Router, Route, browserHistory} from 'react-router';
 import HomePage from './components/Home/HomePage';
 import Catalog from './components/Catalog/CatalogPage';
-import About from './components/About/AboutPage';
+import About from './components/About/AboutView';
 import Login from './components/Login/LoginPage';
 import Register from './components/Register/RegisterPage';
 import Logout from './components/Logout/LogoutPage';

@@ -1,0 +1,33 @@
+.div-members{
+    display: inline-block;
+    border: 2px solid #00b3ee;
+    background-color: #1184CE;
+    padding: 10px;
+    margin: 10px;
+}
+.div-members:hover{
+    border: 6px solid #00b3ee;
+}
+
+.div-picture{
+    position: relative;
+}
+
+.div-link{
+    display: inline-block;
+    padding: 3%;
+}
+
+a img:hover {
+    width:30px;
+}
+
+.button {
+    background-color: #000000;
+    color: #FFFFFF;
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
