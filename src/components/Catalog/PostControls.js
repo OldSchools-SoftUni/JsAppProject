@@ -10,7 +10,7 @@ export default class PostControls extends Component {
         let del =<button className="btn btn-default" type="submit" onClick={()=>reload('posts/' + this.props.id)}>Delete</button>
 
 
-        let comment = <a href="" className="btn btn-default" onClick={this.props.onJoin}>Comment</a>;
+        //let comment = <a href="" className="btn btn-default" onClick={this.props.onJoin}>Comment</a>;
         // if (this.props.canEdit) edit = <Link to={"/edit/" + this.props.teamId} className="btn btn-default">Edit</Link>;
         // if (this.props.ownTeam)
         //     deleted = <a href="" className="btn btn-default" onClick={this.props.onLeave}>Leave team</a>;
@@ -21,13 +21,13 @@ export default class PostControls extends Component {
                 <div>
                     {edit}
                     {del}
-                    {comment}
+
                 </div>
             )
         }else{
             return (
                 <div>
-                    {comment}
+
                 </div>
             )
         }

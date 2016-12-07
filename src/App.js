@@ -42,7 +42,7 @@ class App extends Component {
                 <Navbar>
                     <Link to="/" className="btn btn-primary" activeClassName="btn btn-primary primary" onlyActiveOnIndex={true}>Home</Link>
                     <Link to="/catalog" className="btn btn-primary" activeClassName="btn btn-primary active">List Posts</Link>
-                    <Link to="/create" className="btn btn-primary" activeClassName="btn btn-primary active">Create</Link>
+                    <Link to="/create" className="btn btn-primary" activeClassName="btn btn-primary active">Create Post</Link>
                     <Link to="/logout" className="btn btn-primary" activeClassName="btn btn-primary active">Logout</Link>
                     <Link to="/about" className="btn btn-primary" activeClassName="btn btn-primary active">About</Link>
                 </Navbar>

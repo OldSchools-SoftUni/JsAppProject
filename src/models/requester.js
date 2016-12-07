@@ -57,7 +57,7 @@ function update(module, uri, data, auth) {
 }
 
 function deleted (uri) {
-    const kinveyLoginUrl = kinveyBaseUrl + 'appdata' + "/" + kinveyAppKey + "/" + uri;
+    const kinveyLoginUrl = kinveyBaseUrl + 'appdata/' + kinveyAppKey + "/" + uri;
     console.log(kinveyLoginUrl);
     const kinveyAuthHeaders = makeAuth('kinvey');
     console.log(kinveyLoginUrl);
