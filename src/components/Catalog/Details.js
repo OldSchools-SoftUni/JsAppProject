@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {loadPost, loadUsersDetails} from '../../models/post';
-import {joinTeam, leaveTeam} from '../../models/user';
+import {joinTeam} from '../../models/user';
 import PostControls from './PostControls';
 import './Details.css';
 import {deleted} from '../../models/requester';

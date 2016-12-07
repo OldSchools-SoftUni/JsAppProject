@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-import {deleted} from '../../models/requester';
+//import {deleted} from '../../models/requester';
 import {reload} from '../../models/post'
 
 export default class PostControls extends Component {

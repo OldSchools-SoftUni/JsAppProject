@@ -34,10 +34,10 @@ export default class CreatePage extends Component {
     }
 
     onSubmitResponse(response, textStatus, xhr) {
-        console.dir(response);
-        console.log(textStatus);
-        console.log(xhr);
-        if (textStatus == 'success') {
+        //console.dir(response);
+        //console.log(textStatus);
+        //console.log(xhr);
+        if (textStatus === 'success') {
             // Navigate away from login page
             this.context.router.push('/catalog');
         } else {
