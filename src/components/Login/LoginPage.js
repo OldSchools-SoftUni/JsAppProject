@@ -36,7 +36,6 @@ export default class LoginPage extends Component {
     }
 
     onSubmitResponse(response, textStatus, xhr) {
-        console.log(response);
         if (response === true) {
             // Navigate away from login page
             this.context.router.push('/');

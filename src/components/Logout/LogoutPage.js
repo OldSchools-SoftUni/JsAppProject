@@ -24,6 +24,7 @@ export default class LogoutPage extends Component {
         return (
             <div>
                 <span>Logout Page</span>
+                <p>You have been logged out.</p>
             </div>
         );
     }

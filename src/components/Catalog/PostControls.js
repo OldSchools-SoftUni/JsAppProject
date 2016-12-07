@@ -21,7 +21,6 @@ export default class PostControls extends Component {
                 <div>
                     {edit}
                     {del}
-
                 </div>
             )
         }else{
